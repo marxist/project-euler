@@ -13,8 +13,8 @@
     (labels ((fib (n1 n2)
                (when (< n2 limit)
                  (fib n2 (+ n1 n2)))
-                (when (evenp n1)
-                  (setf sum (+ sum n1)))))
+               (when (evenp n1)
+                 (setf sum (+ sum n1)))))
       (fib 1 2))
     sum))
 
