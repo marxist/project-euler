@@ -12,6 +12,6 @@
                       (loop for multi from num below limit by num
                             collect multi)))
             nums)
-    (apply #'+ multiples)))
+    (reduce #'+ multiples)))
 
 (princ (sum-of-multi '(3 5) 1000))
