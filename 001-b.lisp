@@ -12,8 +12,7 @@
 (defun sum-multiples (nums limit)
   (let ((sum 0)
         (multi 0))
-    (loop for n from 0
-          do (setf multi (+ multi (to-next-multi multi nums)))
+    (loop do (setf multi (+ multi (to-next-multi multi nums)))
           while (< multi limit)
           do (setf sum (+ sum multi)))
     sum))
