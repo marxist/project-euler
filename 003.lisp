@@ -12,7 +12,7 @@
                (if (= (mod new 1) 0)
                  (setf num new)
                  (setf div (1+ div)))))
-      (loop while (< div num)
+      (loop until (= div num)
             do (next-prime)))
     div))
 
