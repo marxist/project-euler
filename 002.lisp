@@ -6,16 +6,12 @@
 ;; By considering the terms in the Fibonacci sequence whose values do not exceed
 ;; four million, find the sum of the even-valued terms.
 
-(defparameter *limit* (* 4 (expt 10 6)))    ; *limit* = four million
+(defconstant +limit+ (* 4 (expt 10 6)))    ; +limit+ = four million
 
-(defun sum-of-even-fibs (limit)
-  (let ((sum 0))
-    (labels ((fib (n1 n2)
-               (when (< n2 limit)
-                 (fib n2 (+ n1 n2)))
-               (when (evenp n1)
-                 (setf sum (+ sum n1)))))
-      (fib 1 2))
-    sum))
+(defun sum-fibs-even (limit)
+  (do ((sum 0 (+ sum (if (evenp f2) f2 0)))
+       (f1 1 f2)
+       (f2 2 (+ f1 f2)))
+    ((> f2 limit) sum)))
 
-(princ (sum-of-even-fibs *limit*))
+(princ (sum-fibs-even +limit+))
