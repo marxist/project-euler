@@ -17,14 +17,16 @@
                (return t)))))
 
 (defun prime-search (start end)
-  (let ((num-list (loop for num from start to end by 2 collect num)))
-    (loop for num in num-list
+  (let* ((num-list (loop for num from start to end by 2 collect num))
+         (last-n (1- (length num-list))))
+    (loop for n from 0 to last-n
+          for num = (nth n num-list)
           do (unless (or (eq num nil) (divisible? num *primes*))
                (add-prime num)
-               (loop for n from 0 to (1- (length num-list))
-                     for m = (nth n num-list)
+               (loop for n2 from n to last-n
+                     for m = (nth n2 num-list)
                      do (when (and (not (eq m nil)) (zerop (mod m num)))
-                          (setf (nth n num-list) nil)))))))
+                          (setf (nth n2 num-list) nil)))))))
 
 (defun prime-search-interval (interval limit)
   (let ((start 3))
