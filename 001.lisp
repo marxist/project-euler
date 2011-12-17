@@ -10,11 +10,8 @@
              #'<)))
 
 (defun sum-multiples (nums limit)
-  (let ((sum 0)
-        (multi 0))
-    (loop do (setf multi (+ multi (to-next-multi multi nums)))
-          while (< multi limit)
-          do (setf sum (+ sum multi)))
-    sum))
+  (do ((sum 0 (+ sum multi))
+       (multi 0 (+ multi (to-next-multi multi nums))))
+    ((= multi limit) sum)))
 
 (princ (sum-multiples '(3 5) 1000))
