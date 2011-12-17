@@ -21,16 +21,11 @@
 ;;
 ;; What is the first term in the Fibonacci sequence to contain 1000 digits?
 
-(defparameter *digits* 1000)
+(defun dig-fib (d)
+  (let ((lim (expt 10 (1- d))))
+    (do ((n 1 (1+ n))
+         (f1 0 f2)
+         (f2 1 (+ f1 f2)))
+      ((> f2 lim) n))))
 
-(defun 1st-n-digit-fib (digits)
-  (let ((limit (expt 10 (1- digits)))
-        (counter 2))
-    (labels ((fib (n1 n2)
-               (when (< n2 limit)
-                 (setf counter (1+ counter))
-                 (fib n2 (+ n1 n2)))))
-      (fib 1 1))
-    counter))
-
-(princ (1st-n-digit-fib *digits*))
+(princ (dig-fib 1000))
