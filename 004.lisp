@@ -4,8 +4,8 @@
 ;; Find the largest palindrome made from the product of two 3-digit numbers.
 
 (defparameter *digits* 3)
-(defparameter *start* (expt 10 (1- *digits*)))
-(defparameter *end* (1- (expt 10 *digits*)))
+(defparameter *start* (expt 10 (1- *digits*)))  ; 100
+(defparameter *end* (1- (expt 10 *digits*)))    ; 999
 
 (defun palindrome? (num)
   (setf num (prin1-to-string num))
