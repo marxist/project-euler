@@ -12,12 +12,12 @@
 
 (defun divisible? (num div-list)
   (let ((lim (sqrt num)))
-    (loop for div in div-list while (< div lim)
+    (loop for div in div-list while (<= div lim)
           do (when (zerop (mod num div))
                (return t)))))
 
 (defun prime-search (start end)
-  (let ((num-list (loop for num from start to end by 2 collect num)))
+  (let ((num-list (loop for num from start to (1- end) by 2 collect num)))
     (loop for num in num-list
           do (unless (divisible? num *primes*)
                (add-prime num)))))
