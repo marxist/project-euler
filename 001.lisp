@@ -4,10 +4,9 @@
 ;; Find the sum of all the multiples of 3 or 5 below 1000.
 
 (defun to-next-multi (start nums)
-  (car (sort (mapcar (lambda (num)
-                       (- num (mod start num)))
-                     nums)
-             #'<)))
+  (reduce #'min (mapcar (lambda (num)
+                          (- num (mod start num)))
+                        nums)))
 
 (defun sum-multiples (nums limit)
   (do ((sum 0 (+ sum multi))
