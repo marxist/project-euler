@@ -5,20 +5,20 @@ From [Project Euler](http://projecteuler.net/) website:
 ---
 
 <pre>
-Problem			Lisp		Haskell
+Problem            Lisp         Haskell
 
-001				x			x
-002				x
-003				x
-004				x
-005				x
-006				x
-007				x
+001                x            x
+002                x            x
+003                x
+004                x
+005                x
+006                x
+007                x
 ...
-015				x
+015                x
 ...
-017				x
-018				x
+017                x
+018                x
 ...
-025				x
+025                x
 </pre>
