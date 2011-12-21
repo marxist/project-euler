@@ -14,5 +14,5 @@ fibsLim' lim fs@(f2:f1:f0)
     | otherwise = fibsLim' lim ((f2 + f1):fs)
 
 main = do
-    let result = sum [ f | f <- fibsLim limit, odd f ]
+    let result = sum [ f | f <- fibsLim limit, even f ]
     print result
