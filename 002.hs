@@ -8,11 +8,11 @@
 
 limit = 4 * 10^6
 
-fibsLim lim = fibsLim' lim [1, 0]
-fibsLim' lim fs@(f2:f1:f0)
-    | f2 > lim = tail fs
-    | otherwise = fibsLim' lim ((f2 + f1):fs)
+fibsTo lim = fibsTo' [1, 0]
+              where fibsTo' fs@(f2:f1:f0)
+                        | f2 > lim = tail fs
+                        | otherwise = fibsTo' ((f2 + f1):fs)
 
 main = do
-    let result = sum [ f | f <- fibsLim limit, even f ]
+    let result = sum [ f | f <- fibsTo limit, even f ]
     print result
