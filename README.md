@@ -24,4 +24,6 @@ Problem             Lisp        Haskell
 ...
 024                             x
 025                 x
+...
+028                             x
 </pre>
