@@ -14,6 +14,7 @@ Problem             Lisp        Haskell
 005                 x
 006                 x
 007                 x
+008*
 ...
 015                 x
 016                             x
@@ -27,3 +28,4 @@ Problem             Lisp        Haskell
 ...
 028                             x
 </pre>
+\* Written in programming language not specified above.
