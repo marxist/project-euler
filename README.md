@@ -20,6 +20,8 @@ Problem             Lisp        Haskell
 017                 x
 018                 x
 ...
+020                             x
+...
 024                             x
 025                 x
 </pre>
