@@ -11,8 +11,8 @@
 factorial 1 = 1
 factorial n = n * factorial (n - 1)
 
-delete index list = sublist1 ++ (tail sublist2)
-    where (sublist1,sublist2) = splitAt index list
+delete index list = sublist1 ++ sublist2
+    where (sublist1,_:sublist2) = splitAt index list
 
 nth_perm nums n
     | len == 1 = nums
