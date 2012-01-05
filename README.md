@@ -15,6 +15,7 @@ Problem             Lisp        Haskell
 006                 x
 007                 x
 008*
+009                 x
 ...
 015                 x
 016                             x
