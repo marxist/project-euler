@@ -15,14 +15,10 @@
 
 (defun next-kn-a (a n)
   (let ((b (/ n a)))
-    (labels ((next (bb)
-               (if (zerop (mod bb 1))
-                 bb
-                 (if (> bb (/ n 2))
-                   n
-                   (next (+ bb b))))))
-      (next b))))
-
+    (setf b (* b (denominator b)))
+    (if (> b (/ n 2))
+      n
+      b)))
 
 (defun next-b (a n)
   (max (- (/ n 2) a) (next-kn-a a n)))
