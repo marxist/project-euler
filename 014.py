@@ -30,7 +30,8 @@ def top_sequence(limit):
     visited[0] = 1
     top = 1
     # get lengths of the rest of the numbers
-    for num in range(2, limit + 1):
+    for num in range(0, int(limit / 3)):
+        num = limit - num
         length, visited = to1(num, visited, limit)
         if length > visited[top - 1]:
             top = num
@@ -40,6 +41,5 @@ if __name__ == '__main__':
     num = 1000000
     start = time.time()
     top = top_sequence(num)
-    #index = visited.index(max(visited))
     span = time.time() - start
     print(top, span)
